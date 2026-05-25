@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package transaction;
+
+service TransactionService {
+  rpc GetTransactions (TransactionRequest) returns (stream TransactionResponse);
+}
+
+message TransactionRequest {
+  int32 limit = 1; 
+}
+
+// ALTERADO: O servidor agora responderá uma lista de transações por vez
+//mais transações de uma vez só
+message TransactionResponse {
+  repeated TransactionItem transactions = 1;
+}
+
+// O modelo individual de cada transação
+message TransactionItem {
+  string id = 1;
+  string merchant = 2;
+  double amount = 3;
+  string category = 4;
+  string date = 5;
+}
