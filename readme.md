@@ -13,6 +13,7 @@ npm install @grpc/grpc-js @grpc/proto-loader csv-parser
 !Baixe o Dataset no Kaggle e cole o arquivo CSV na mesma pasta dos scripts.!
 
 3. Execução (Dois Terminais)
+
 Terminal 1 (Servidor):
 node server.js
 
